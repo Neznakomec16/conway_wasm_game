@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Conway's Game of Life</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #controls {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #333;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      #fps, #memory {
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        margin-bottom: 10px;
+        white-space: pre;
+        font-family: monospace;
+        text-align: center;
+      }
+
+      #play-pause, #reset-random, #reset-dead, #tick {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      #speed-control {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      #game-container {
+        margin-left: 240px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: calc(100vh - 40px);
+      }
+
+      #game-of-life-canvas {
+        display: block;
+        background-color: #fff;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="controls">
+      <div id="fps">FPS: </div>
+      <div id="memory">Memory: </div>
+      <button id="play-pause">Play/Pause</button>
+      <button id="reset-random">Reset to Random</button>
+      <button id="reset-dead">Reset to All Dead</button>
+      <button id="tick">Tick</button>
+      <input id="speed-control" type="range" min="1" max="100" value="1">
+    </div>
+    <div id="game-container">
+      <canvas id="game-of-life-canvas"></canvas>
+    </div>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
